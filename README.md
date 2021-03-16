@@ -2,7 +2,7 @@
 
 ![Bluetable Cover](https://i.ibb.co/QpDPkYB/bluetablebanner.png)
 
-Bluetable is a simple and (hopefully) efficient way to study the periodic table! 
+Bluetable is a simple and (hopefully) efficient way to study the periodic table!
 
 I created Bluetable since I'm getting a science exam in a few days, and wanted to make a site to help my classmates and I practice.
 

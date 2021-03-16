@@ -32,7 +32,7 @@ And also Font Awesome (which provides the icon used in the blue button). -->
 
 	var yes = false;
 
-	maxvar = 118;
+	var maxvar = 118;
 	
 	// These next two are vars/states bound to input boxes, meaning any text that gets
 	// typed will automatically be updated here.
