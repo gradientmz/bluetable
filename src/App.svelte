@@ -31,6 +31,8 @@ And also Font Awesome (which provides the icon used in the blue button). -->
 	var accuracy = "...";
 
 	var yes = false;
+
+	maxvar = 118;
 	
 	// These next two are vars/states bound to input boxes, meaning any text that gets
 	// typed will automatically be updated here.
@@ -50,7 +52,6 @@ And also Font Awesome (which provides the icon used in the blue button). -->
 	
 	 function get() {
 		 // This makes get() only return elements between a and 18 when the box is checked
-		var maxvar = 118;
 		if (yes == true) {
 			maxvar = 18;
 		}
@@ -198,7 +199,7 @@ of the project used here.-->
 	<p>
 		Bluetable by Mark Zhou at NFS
 	</p>
-	<a href="https://svelte.dev/repl/14eff89c9fa949a08bac48b96d605a27?version=3.35.0">
+	<a href="https://github.com/gradientmz/bluetable/blob/master/src/App.svelte">
 	<img class="nfs" alt="NFS school logo" src="https://i.ibb.co/P96qRkz/2019-logo.png">
 	</a>
 
