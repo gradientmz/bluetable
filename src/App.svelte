@@ -29,19 +29,32 @@ And also Font Awesome (which provides the icon used in the blue button). -->
 	var correct = 0;
 	var incorrect = 0;
 	var accuracy = "...";
+
+	var yes = false;
 	
 	// These next two are vars/states bound to input boxes, meaning any text that gets
 	// typed will automatically be updated here.
 	
 	var numberinput = "";
 	var symbolinput = "";
+
+	// This function returns a random number between the two parameters passed.
+
+	function random(min, max){
+    return Math.floor(Math.random()*(max - min + 1) + min);
+	}
 	
 	// This is the get function, where the data Bluetable uses gets retreived from
 	// an API. This one is a public REST API that returns periodic table data
 	// in json format.
 	
 	 function get() {
-    fetch(`https://neelpatel05.pythonanywhere.com/element/atomicnumber?atomicnumber=${Math.floor(Math.random() * 118)+1}`)
+		 // This makes get() only return elements between a and 18 when the box is checked
+		var maxvar = 118;
+		if (yes == true) {
+			maxvar = 18;
+		}
+    fetch(`https://neelpatel05.pythonanywhere.com/element/atomicnumber?atomicnumber=${random(1, maxvar)}`)
       .then((response) => response.json())
       .then((data) => {
 				// Here, the data gets assigned to the variables above
@@ -158,6 +171,9 @@ what the site will look like -->
 		width: 50px;
 		height: 50px;
 	}
+	.eighteencheck {
+		margin-top: 1rem;
+	}
 </style>
 
 <!-- And lastly, here's the HTML! It's pretty short, but it serves as the "skeleton"
@@ -173,12 +189,19 @@ of the project used here.-->
 		
 		<button on:click={submit} class="submit"><i class="fas fa-chevron-square-right fa-lg"></i></button>
 	</div>
+
+	<label class="eighteencheck">
+		<input type=checkbox bind:checked={yes}>
+		Only study elements 1-18
+	</label>
+
 	<p>
 		Bluetable by Mark Zhou at NFS
 	</p>
 	<a href="https://svelte.dev/repl/14eff89c9fa949a08bac48b96d605a27?version=3.35.0">
 	<img class="nfs" alt="NFS school logo" src="https://i.ibb.co/P96qRkz/2019-logo.png">
 	</a>
+
 </body>
 
 <!-- Thank you for reading! -->
