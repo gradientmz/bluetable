@@ -113,10 +113,9 @@ what the site will look like -->
 
 <style>
 	@font-face {
-  font-family: "Inter";
-  src: url("Inter-Regular.ttf") format("ttf");
+		font-family: "Inter";
+		src: url("Inter-Regular.ttf") format("ttf");
 	}
-
 	body {
 		font-family: 'Inter', sans-serif;
 		background-color: whitesmoke;
@@ -177,6 +176,20 @@ what the site will look like -->
 	.eighteencheck {
 		margin-top: 1rem;
 	}
+
+	/* This media query changes the CSS slightly when the screen is small (for mobile devices)! */
+	
+	@media only screen and (max-width: 450px){
+		.element {
+			font-size: 2.5rem;
+		}
+		.stats {
+			font-size: 1em;
+		}
+		.periodic-text {
+			font-size: 1.65rem;
+		}
+	}
 </style>
 
 <!-- And lastly, here's the HTML! It's pretty short, but it serves as the "skeleton"
@@ -193,12 +206,12 @@ of the project used here.-->
 		<button on:click={submit} class="submit"><i class="fas fa-chevron-square-right fa-lg"></i></button>
 	</div>
 
-	<label class="eighteencheck">
+	<label class="eighteencheck" style="text-align: center;">
 		<input type=checkbox bind:checked={yes}>
 		Only study elements 1-18
 	</label>
 
-	<p>
+	<p style="text-align: center;">
 		Bluetable by Mark Zhou at NFS
 	</p>
 	<a href="https://github.com/gradientmz/bluetable/blob/master/src/App.svelte">
