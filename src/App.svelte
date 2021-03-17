@@ -70,16 +70,6 @@ And also Font Awesome (which provides the icon used in the blue button). -->
 		// The input boxes' colors are actually set with vars as well!
 		inputcolor = "background-color: white;"
 		
-		// This part calculates the user's accuracy, but only after they've
-		// gotten 3 questions correct.
-		if (completed >= 2) {
-			if (incorrect == 0 && correct > 0) {
-				accuracy = 100
-			} else {
-				accuracy = Math.round((1 - (incorrect / correct)) * 100)
-			}
-		}
-		
 		// This part is the main section of submit. It checks if the user
 		// got the answer or not, and acts accordingly
 		if (currentincorrect == false) {
@@ -95,7 +85,7 @@ And also Font Awesome (which provides the icon used in the blue button). -->
 				currentincorrect = true
 
 				console.log("You got something wrong...")
-				inputcolor = "background-color: rgba(110, 16, 18, 0.79)"
+				inputcolor = "background-color: #ff7878";
 				incorrect++;
 			}
 		} else {
@@ -103,7 +93,26 @@ And also Font Awesome (which provides the icon used in the blue button). -->
 			get()
 			numberinput = ""; symbolinput = "";
 		}
+
+		// This part calculates the user's accuracy, but only after they've
+		// gotten 3 questions correct.
+		if (completed >= 3) {
+			if (incorrect == 0 && correct > 0) {
+				accuracy = 100
+			} else {
+				accuracy = Math.round((1 - (incorrect / correct)) * 100)
+			}
+		}
 	}
+
+	// The code here runs what would usually happen on the blue button's click,
+	// but whenever enter is pressed (small but useful feature)
+
+	document.querySelector("body").addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      submit();
+    }
+  });
 	
 get()
 </script>
@@ -134,7 +143,7 @@ what the site will look like -->
 		flex-direction: column;
 		padding: 0rem 1.75rem;
 		width: 85vw;
-		max-width: 65rem;
+		max-width: 55rem;
 	}
 	.periodic-text {
 		text-align: center;
@@ -144,9 +153,9 @@ what the site will look like -->
 		border: none;
 		border-radius: 0.5rem;
 		transition: 0.5s;
-		display: block;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 
 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+		-webkit-appearance: none;
 	}
 	.element {
 		font-size: 3rem;
