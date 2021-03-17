@@ -4,9 +4,6 @@ First, here are the imports. Bluetable uses the font Inter from Google fonts,
 And also Font Awesome (which provides the icon used in the blue button). -->
 
 <svelte:head>
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-	
 	<script src="https://kit.fontawesome.com/fcdf22faa4.js" crossorigin="anonymous"></script>
 </svelte:head>
 
@@ -115,6 +112,11 @@ get()
 what the site will look like -->
 
 <style>
+	@font-face {
+  font-family: "Inter";
+  src: url("Inter-Regular.ttf") format("ttf");
+	}
+
 	body {
 		font-family: 'Inter', sans-serif;
 		background-color: whitesmoke;
