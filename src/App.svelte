@@ -133,6 +133,8 @@ what the site will look like -->
 		justify-content: center;
 		flex-direction: column;
 		padding: 0rem 1.75rem;
+		width: 85vw;
+		max-width: 65rem;
 	}
 	.periodic-text {
 		text-align: center;
@@ -142,6 +144,7 @@ what the site will look like -->
 		border: none;
 		border-radius: 0.5rem;
 		transition: 0.5s;
+		display: block;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 
 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 	}
@@ -155,6 +158,8 @@ what the site will look like -->
 		margin-bottom: 2rem;
 		font-weight: normal;
 		text-align: center;
+		margin-left: 0.5rem;
+		margin-right: 0.5rem;
 	}
 	.submit {
 		margin-top: 1rem;
@@ -178,16 +183,16 @@ what the site will look like -->
 	}
 
 	/* This media query changes the CSS slightly when the screen is small (for mobile devices)! */
-	
+
 	@media only screen and (max-width: 450px){
 		.element {
-			font-size: 2.5rem;
+			font-size: 2.75rem;
 		}
 		.stats {
 			font-size: 1em;
 		}
 		.periodic-text {
-			font-size: 1.65rem;
+			font-size: 1.75rem;
 		}
 	}
 </style>
